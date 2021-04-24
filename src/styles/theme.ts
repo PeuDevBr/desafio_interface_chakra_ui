@@ -4,10 +4,15 @@ export const theme = extendTheme({
   styles: {
     colors: {
       yellow: {
-        "800": "#FFBA08"
+        "400": "#FFBA08",
+        "300": "rgba(255, 186, 8, 0.5)",
       },
       gray: {
-        "800": "#47585B"
+        "700": "#47585B",
+        "500": "#999999",
+        "400": "rgba(153, 153, 153, 0.5)",
+        "300": "#DADADA",
+        "100": "#F5F8FA",
       }
     },
     fonts: {

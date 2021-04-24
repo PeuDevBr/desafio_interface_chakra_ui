@@ -1,0 +1,39 @@
+.swiper-button-next { //seta direita
+  right: 45px;
+}
+.swiper-button-prev { //seta esquerda
+  left: 45px;
+}
+.swiper-button-prev:after, .swiper-button-next:after{ // seta quando ativa
+  color: #FFBA08;
+}
+
+.swiper-pagination-bullet{ // bolinhas
+  width:16px;
+  height:16px;
+  background:#999999;
+  opacity: 1;
+}
+
+.swiper-pagination-bullet-active{ // bolinha quando ativa
+  background:#FFBA08 ; 
+}
+
+@media(max-width:30em) {
+  .swiper-button-next {
+    right: 15px;
+  }
+  .swiper-button-prev {
+    left: 15px;
+  }
+
+  .swiper-button-next:after,
+  .swiper-button-prev:after {
+    font-size:1.2rem;
+  }
+
+  .swiper-pagination-bullet{
+    width:8px;
+    height:8px;
+  }
+}

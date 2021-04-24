@@ -1,6 +1,13 @@
 import { Avatar, Flex, Image, Text } from "@chakra-ui/react";
 
-export function Country({foto, city, country, avatar}) {
+interface countryCardsProps {
+  photo: string,
+  city: string,
+  country: string,
+  avatar: string,
+}
+
+export function CountryCards({photo, city, country, avatar}: countryCardsProps) {
   return (
     <Flex
       direction="column"
@@ -11,7 +18,7 @@ export function Country({foto, city, country, avatar}) {
     >
       <Image 
         h={173}
-        src={`/images/${foto}.png`}
+        src={`/images/destination/city/${photo}.png`}
       />
       <Flex
         justifyContent="space-between"
@@ -35,7 +42,7 @@ export function Country({foto, city, country, avatar}) {
         </Flex>
         <Avatar
           size="sm"
-          src={`/images/${avatar}.png`}
+          src={`/images/destination/country/${avatar}.png`}
         />
       </Flex>          
     </Flex>  
