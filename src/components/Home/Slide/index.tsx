@@ -5,12 +5,13 @@ import React from "react";
 import SwiperCore, { Navigation, Pagination, A11y, Autoplay } from 'swiper';
 
 import { Swiper, SwiperSlide } from 'swiper/react';
+import { ContinentsProps } from "../../../pages/home";
 
 SwiperCore.use([Navigation, Pagination, A11y, Autoplay]);
 
 
 
-export function Slide() {
+export function Slide({ continents }: ContinentsProps) {
   return (
     <Flex 
       w="100%" 
@@ -20,6 +21,7 @@ export function Slide() {
       mb={["5","10"]}
       mt={["2", "4"]}
     >
+      {console.log(continents)}
       <Swiper
         slidesPerView={1} //slide exibido por vez
         navigation // ativa a paginação
@@ -29,101 +31,40 @@ export function Slide() {
         }}
         style={{width: '100%', flex: '1'}}
       > 
-        <SwiperSlide>
-          <Flex
-            w="100%"
-            h="100%"
-            justify="center"
-            align="center"
-            direction="column"
-            bgImage="url(images/Slider/amsterda.jpg)"
-            bgRepeat="no-repeat"
-            bgSize="cover"
-            textAlign="center"
-            bgPosition="center"
+        {continents.map(continent =>(
+          <SwiperSlide key={continent.slug}>
+            <Flex
+              w="100%"
+              h="100%"
+              justify="center"
+              align="center"
+              direction="column"
+              bgImage={`url('${continent.image}')`}
+              bgRepeat="no-repeat"
+              bgSize="cover"
+              textAlign="center"
+              bgPosition="center"
 
-            color="gray.100"
-            fontWeight="bold"
-          >
-            <Link href="/europa" >
-              <a>
-                <Heading fontSize={["3xl", "4xl", "5xl"]}>
-                  Europa
-                </Heading>
-                <Text 
-                  fontSize={["0.8rem", "1xl", "2xl"]}
-                  mt={["2", "4"]}
-                >
-                  O continente mais antigo
-                </Text>
-              </a>
-            </Link>
-          </Flex>
-        </SwiperSlide>
+              color="gray.100"
+              fontWeight="bold"
+            >
+              <Link href={`/continent/${continent.slug}` }>
+                <a>
+                  <Heading fontSize={["3xl", "4xl", "5xl"]}>
+                    {`${continent.title}`}
+                  </Heading>
+                  <Text 
+                    fontSize={["0.8rem", "1xl", "2xl"]}
+                    mt={["2", "4"]}
+                  >
+                    {`${continent.summary}`}
+                  </Text>
+                </a>
+              </Link>
+            </Flex>
+          </SwiperSlide>
+        ))}
 
-        <SwiperSlide>
-          <Flex
-            w="100%"
-            h="100%"
-            justify="center"
-            align="center"
-            direction="column"
-            bgImage="url(images/Slider/budapeste.jpg)"
-            bgRepeat="no-repeat"
-            bgSize="cover"
-            textAlign="center"
-            bgPosition="center"
-
-            color="gray.100"
-            fontWeight="bold"
-          >
-            <Link href="/europa" >
-              <a>
-                <Heading fontSize={["3xl", "4xl", "5xl"]}>
-                  Europa
-                </Heading>
-                <Text 
-                  fontSize={["0.8rem", "1xl", "2xl"]}
-                  mt={["2", "4"]}
-                >
-                  O continente mais antigo
-                </Text>
-              </a>
-            </Link>
-          </Flex>
-        </SwiperSlide>
-
-        <SwiperSlide>
-          <Flex
-            w="100%"
-            h="100%"
-            justify="center"
-            align="center"
-            direction="column"
-            bgImage="url(images/Slider/londres.jpg)"
-            bgRepeat="no-repeat"
-            bgSize="cover"
-            textAlign="center"
-            bgPosition="center"
-
-            color="gray.100"
-            fontWeight="bold"
-          >
-            <Link href="/europa" >
-              <a>
-                <Heading fontSize={["3xl", "4xl", "5xl"]}>
-                  Europa
-                </Heading>
-                <Text 
-                  fontSize={["0.8rem", "1xl", "2xl"]}
-                  mt={["2", "4"]}
-                >
-                  O continente mais antigo
-                </Text>
-              </a>
-            </Link>
-          </Flex>
-        </SwiperSlide>
       </Swiper>
     </Flex>
   )

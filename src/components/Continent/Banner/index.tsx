@@ -1,13 +1,14 @@
 import { Flex, Text } from "@chakra-ui/react";
+import { ContinentProps } from "../../../pages/continent/[slug]";
 
-export function Banner() {
+export function Banner( {continent }: ContinentProps) {
   return (
     <Flex
         w="100%"
         h={["150px", "250px", "500px"]}
         px={["0", "0", "36"]}
         pt={["0", "0", "72"]}
-        bgImage='url("/images/destination/europa.png")'
+        bgImage={`url('${continent.banner_image}')`}
         bgPosition="center"
         bgRepeat="no-repeat"
         bgSize="cover"

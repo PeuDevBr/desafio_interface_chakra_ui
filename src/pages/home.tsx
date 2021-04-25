@@ -6,8 +6,20 @@ import { Slide } from "../components/Home/Slide";
 import { TravelTypes } from "../components/Home/TravelTypes";
 import { Text } from "../components/Home/Text";
 import { Line } from "../components/Home/Line";
+import { GetStaticProps } from "next";
+import { getPrismicClient } from "../services/prismic";
+import Prismic from "@prismicio/client"
 
-export default function Home() {
+ export interface ContinentsProps {
+  continents: {
+    slug: string,
+    title: string,
+    summary: string,
+    image: string,
+  }[] // array com vários continentes
+}
+
+export default function Home({ continents }: ContinentsProps) {
   return (
     <Flex
       width="100%" // para a margin funcionar
@@ -27,8 +39,34 @@ export default function Home() {
 
       <Text text="Então escolha seu continente"/>
 
-      <Slide/>
+      <Slide continents={continents}/>
       
     </Flex>
   )
+}
+
+export const getStaticProps: GetStaticProps = async() => {
+  const prismic = getPrismicClient();
+
+  const response = await prismic.query(
+    [Prismic.Predicates.at('document.type', 'continent')]
+  )
+
+  const continents = response.results.map(continent => {
+    return {
+      slug: continent.uid,
+      title: continent.data.title,
+      summary: continent.data.summary,
+      image: continent.data.slider_image.url
+    }
+  })
+
+  console.log(continents)
+  
+  return { 
+    props: {
+      continents
+    },
+    revalidate: 1800, // verifica se tem atualização a cada 30 minutos
+  }
 }

@@ -15,10 +15,7 @@ export function Informations({number, text, icon}) {
       </Heading>
       <Text fontWeight="bold" fontSize={["md", "xl"]} color="#47585B">
         {text}
-        { isActiveIcon 
-          ? <IconInformation/>
-          : "" 
-        }
+        { isActiveIcon && <IconInformation/> }
       </Text>     
     </Flex>
   )
