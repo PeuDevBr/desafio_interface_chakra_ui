@@ -7,7 +7,8 @@ export function GridItems() {
       templateColumns={["repeat(1, 1fr)", "repeat(2, 1fr)", "repeat(2, 1fr)", "repeat(3, 1fr)", "repeat(4, 1fr)" ]}
       mt={["5", "10"]} 
       gap={["5","10"]} 
-      maxWidth={1160}
+      alignItems="center"
+      justifyContent="center"
     >
       <CountryCards 
         photo="londres" 

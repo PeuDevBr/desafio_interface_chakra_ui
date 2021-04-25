@@ -31,7 +31,7 @@ export default function Europa() {
           
         </Grid>
 
-        <Text fontSize="26" fontWeight="bold">
+        <Text fontSize={["2xl", "4xl"]} fontWeight="bold">
           Cidades + 100
         </Text>
 

@@ -1,6 +1,6 @@
 import { Flex} from "@chakra-ui/react"
 import React from "react"
-import { Banner } from "../components/Continent/Banner";
+import { Banner } from "../components/Home/Banner";
 import { Header } from "../components/Header";
 import { Slide } from "../components/Home/Slide";
 import { TravelTypes } from "../components/Home/TravelTypes";
