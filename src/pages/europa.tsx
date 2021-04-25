@@ -1,4 +1,4 @@
-import { Flex, Text } from "@chakra-ui/react"
+import { Flex, Text, Grid } from "@chakra-ui/react"
 import React from "react"
 import { Header } from "../components/Header";
 import { Banner } from "../components/Continent/Banner";
@@ -18,14 +18,18 @@ export default function Europa() {
      
       <Banner/>
 
-      <Flex direction="column" mx={[16, 70, 149]}>
-        <Flex direction={["column", "row"]} justifyContent="space-between">   
+      <Flex direction="column" maxW="1160px"  mx="auto" mb="10" px="1rem" >
+        <Grid 
+          templateColumns={["1fr", "1fr", "1fr 1fr", "1.2fr 1fr"]}
+          gap={[5, 10,  16, 20]}
+          my={["8", "20"]}
+        >   
 
           <ContinentText/>
 
           <ContinentInformation/>
           
-        </Flex>
+        </Grid>
 
         <Text fontSize="26" fontWeight="bold">
           Cidades + 100

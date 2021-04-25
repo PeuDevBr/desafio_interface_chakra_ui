@@ -5,8 +5,8 @@ export function GridItems() {
   return (
     <Grid
       templateColumns={["repeat(1, 1fr)", "repeat(2, 1fr)", "repeat(2, 1fr)", "repeat(3, 1fr)", "repeat(4, 1fr)" ]}
-      mt="10" 
-      rowGap={10} 
+      mt={["5", "10"]} 
+      gap={["5","10"]} 
       maxWidth={1160}
     >
       <CountryCards 
@@ -14,7 +14,7 @@ export function GridItems() {
         city="Londres" 
         country="Reino Unido" 
         avatar="londresLogo"
-      /> 
+      />
 
       <CountryCards 
         photo="paris" 

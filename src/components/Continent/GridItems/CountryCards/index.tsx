@@ -1,4 +1,4 @@
-import { Avatar, Flex, Image, Text } from "@chakra-ui/react";
+import { Avatar, Flex, Image, Text, Center } from "@chakra-ui/react";
 
 interface countryCardsProps {
   photo: string,
@@ -9,42 +9,43 @@ interface countryCardsProps {
 
 export function CountryCards({photo, city, country, avatar}: countryCardsProps) {
   return (
-    <Flex
-      direction="column"
-      bg="white"
-      w={256}
-      h={279}
-      mr={45}
-    >
-      <Image 
-        h={173}
-        src={`/images/destination/city/${photo}.png`}
-      />
+    <Center>
       <Flex
-        justifyContent="space-between"
-        align="center"
-        mx="6"
-        mt="4"
+        direction="column"
+        bg="white"        
+        w={256}
+        h={279}
       >
-        <Flex direction="column">
-          <Text 
-            fontWeight="bold"
-            fontSize="20"
-          >
-            {city}
-          </Text>
-          <Text 
-            fontSize="16"
-            mt="4"
-          >
-            {country}
-          </Text>
-        </Flex>
-        <Avatar
-          size="sm"
-          src={`/images/destination/country/${avatar}.png`}
+        <Image 
+          h={173}
+          src={`/images/destination/city/${photo}.png`}
         />
-      </Flex>          
-    </Flex>  
+        <Flex
+          justifyContent="space-between"
+          align="center"
+          mx="6"
+          mt="4"
+        >
+          <Flex direction="column">
+            <Text 
+              fontWeight="bold"
+              fontSize="20"
+            >
+              {city}
+            </Text>
+            <Text 
+              fontSize="16"
+              mt="4"
+            >
+              {country}
+            </Text>
+          </Flex>
+          <Avatar
+            size="sm"
+            src={`/images/destination/country/${avatar}.png`}
+          />
+        </Flex>          
+      </Flex>  
+    </Center>
   )
 }

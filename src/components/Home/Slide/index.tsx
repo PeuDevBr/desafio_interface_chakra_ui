@@ -36,7 +36,7 @@ export function Slide() {
             justify="center"
             align="center"
             direction="column"
-            bgImage="url(images/continente.png)"
+            bgImage="url(images/Slider/amsterda.jpg)"
             bgRepeat="no-repeat"
             bgSize="cover"
             textAlign="center"
@@ -68,7 +68,39 @@ export function Slide() {
             justify="center"
             align="center"
             direction="column"
-            bgImage="url(images/continente.png)"
+            bgImage="url(images/Slider/budapeste.jpg)"
+            bgRepeat="no-repeat"
+            bgSize="cover"
+            textAlign="center"
+            bgPosition="center"
+
+            color="gray.100"
+            fontWeight="bold"
+          >
+            <Link href="/europa" >
+              <a>
+                <Heading fontSize={["3xl", "4xl", "5xl"]}>
+                  Europa
+                </Heading>
+                <Text 
+                  fontSize={["0.8rem", "1xl", "2xl"]}
+                  mt={["2", "4"]}
+                >
+                  O continente mais antigo
+                </Text>
+              </a>
+            </Link>
+          </Flex>
+        </SwiperSlide>
+
+        <SwiperSlide>
+          <Flex
+            w="100%"
+            h="100%"
+            justify="center"
+            align="center"
+            direction="column"
+            bgImage="url(images/Slider/londres.jpg)"
             bgRepeat="no-repeat"
             bgSize="cover"
             textAlign="center"

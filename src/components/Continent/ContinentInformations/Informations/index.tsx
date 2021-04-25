@@ -1,13 +1,25 @@
-import { Flex, Text } from "@chakra-ui/react";
+import { Flex, Heading, Text } from "@chakra-ui/react";
+import { IconInformation } from "./IconInformation";
 
-export function Informations({number, text}) {
+export function Informations({number, text, icon}) {
+  const isActiveIcon = icon
+
   return (
     <Flex
       direction="column"
-      align="center"
+      align={["flex-start", "flex-start", "center"]}
+      justify="center"
     >
-      <Text fontSize={["28", "32", "36", "40", "48"]} color="#FFBA08">{number}</Text>
-      <Text fontSize={["18","18", "20", "20", "24"]}>{text}</Text>
+      <Heading fontSize={["2xl", "5xl"]} color="#FFBA08" fontWeight="bold" >
+        {number}
+      </Heading>
+      <Text fontWeight="bold" fontSize={["md", "xl"]} color="#47585B">
+        {text}
+        { isActiveIcon 
+          ? <IconInformation/>
+          : "" 
+        }
+      </Text>     
     </Flex>
   )
 }
